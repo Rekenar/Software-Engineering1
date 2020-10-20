@@ -36,7 +36,7 @@ public class EinstiegsbeispielTest {
             System.out.println("Result of incorrect1 was not correct!");
 
         }catch(ArrayIndexOutOfBoundsException a){
-            System.out.println("Second Array isn't as long as enough!");
+            System.out.println("Second Array isn't as long as the first Array!");
         }
     }
 
