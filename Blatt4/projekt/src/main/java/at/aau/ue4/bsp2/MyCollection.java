@@ -31,14 +31,30 @@ public class MyCollection {
      * @param s String to remove
      */
     public void remove(String s) throws IllegalArgumentException{
-
+        if(cursor == 0){
+            throw new IllegalArgumentException();
+        }
+        for(int i = 0; i < cursor; i++){
+            if(!list[i].equals(s)){
+                if(i + 1 == cursor){
+                    throw new IllegalArgumentException();
+                }
+                continue;
+            }
+            list[i] = list[cursor];
+            list[cursor--] = null;
+            break;
+        }
     }
 
     /**
      * Removes all items from the list and initializes a new list
      */
     public void empty() {
-
+        for(int i = 0; i < cursor;i++){
+            list[i] = null;
+        }
+        list = new String[list.length];
+        cursor = 0;
     }
-
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="14" failures="0" name="at.aau.ue4.bsp1.RingBufferTest" time="0.046" errors="0" skipped="0">
+<testsuite tests="14" failures="0" name="at.aau.ue4.bsp1.RingBufferTest" time="0.042" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2020.3"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -59,18 +59,18 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="BaseTest" name="Should_AssertTrue_When_BufferIsEmpty()" time="0.031"/>
-  <testcase classname="BaseTest" name="Should_ReturnUnsupportedOperationException_When_MethodRemoveIsLoaded()" time="0.002"/>
-  <testcase classname="BaseTest" name="Should_ThrowRuntimeException_When_BufferIsEmpty()" time="0.002"/>
+  <testcase classname="BaseTest" name="Should_AssertTrue_When_BufferIsEmpty()" time="0.021"/>
+  <testcase classname="BaseTest" name="Should_ReturnUnsupportedOperationException_When_MethodRemoveIsLoaded()" time="0.003"/>
+  <testcase classname="BaseTest" name="Should_ThrowRuntimeException_When_BufferIsEmpty()" time="0.001"/>
   <testcase classname="BaseTest" name="Should_ReturnNextElement_When_ThereIsNoNextElement()" time="0.003"/>
-  <testcase classname="BaseTest" name="Should_ReturnItem_When_BufferIsNotEmpty()" time="0"/>
-  <testcase classname="BaseTest" name="Should_ReturnTrue_When_BufferIsFull()" time="0"/>
-  <testcase classname="BaseTest" name="Should_AssertFalse_When_BufferIsNotEmpty()" time="0.003"/>
-  <testcase classname="BaseTest" name="Should_ReturnFalse_When_BufferIsEmpty()" time="0.001"/>
-  <testcase classname="BaseTest" name="Should_ReturnFive_When_BufferHasFiveElement()" time="0.001"/>
-  <testcase classname="BaseTest" name="Should_ReturnZero_When_BufferIsEmpty()" time="0"/>
-  <testcase classname="BaseTest" name="Should_ReturnNoSuchElementException_When_ThereIsNoNextElement()" time="0.001"/>
-  <testcase classname="BaseTest" name="Should_ThrowRuntimeException_When_BufferLengthIsEqualToCount()" time="0.001"/>
-  <testcase classname="FullCoverageTest" name="test()" time="0"/>
+  <testcase classname="BaseTest" name="Should_ReturnItem_When_BufferIsNotEmpty()" time="0.001"/>
+  <testcase classname="BaseTest" name="Should_ReturnTrue_When_BufferIsFull()" time="0.001"/>
+  <testcase classname="BaseTest" name="Should_AssertFalse_When_BufferIsNotEmpty()" time="0.002"/>
+  <testcase classname="BaseTest" name="Should_ReturnFalse_When_BufferIsEmpty()" time="0"/>
+  <testcase classname="BaseTest" name="Should_ReturnFive_When_BufferHasFiveElement()" time="0.003"/>
+  <testcase classname="BaseTest" name="Should_ReturnZero_When_BufferIsEmpty()" time="0.001"/>
+  <testcase classname="BaseTest" name="Should_ReturnNoSuchElementException_When_ThereIsNoNextElement()" time="0.002"/>
+  <testcase classname="BaseTest" name="Should_ThrowRuntimeException_When_BufferLengthIsEqualToCount()" time="0.002"/>
+  <testcase classname="FullCoverageTest" name="test()" time="0.001"/>
   <testcase classname="FullMutationScoreTest" name="test()" time="0.001"/>
 </testsuite>

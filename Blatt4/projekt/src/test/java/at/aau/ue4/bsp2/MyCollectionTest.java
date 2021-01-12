@@ -34,9 +34,10 @@ public class MyCollectionTest
     }
     @Test
     public void testRemoveEmpty(){
-        for(int i = c.size(); i > 0; i--){
+        for(int i = 3; i > 0; i--){
+            System.out.println(i);
             c.remove(String.valueOf(i));
-            assertEquals(i,c.size());
+            assertEquals(i - 1,c.size());
         }
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             c.remove("5");
@@ -45,7 +46,13 @@ public class MyCollectionTest
     @Test
     public void testRemoveNotInList(){
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            c.remove("5");
+            c.remove("+");
         });
+    }
+    @Test
+    public void testEmpty(){
+        assertEquals(3,c.size());
+        c.empty();
+        assertEquals(0,c.size());
     }
 }
