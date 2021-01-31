@@ -30,6 +30,7 @@ public class BaseTest {
     public void Should_AssertTrue_When_BufferIsEmpty() {
         Assertions.assertTrue(ringBufferEmpty.isEmpty());
     }
+
     @Test
     public void Should_AssertFalse_When_BufferIsNotEmpty() {
         Assertions.assertFalse(ringBufferFull.isEmpty());
@@ -43,7 +44,7 @@ public class BaseTest {
         Assertions.assertEquals(5, ringBufferFull.size());
     }
     @Test
-    public void Should_ThrowRuntimeException_When_BufferLengthIsEqualToCount() {
+    public void Should_ThrowRuntimeException_When_BufferLengthIsFull() {
         Assertions.assertThrows(RuntimeException.class, () -> {
             ringBufferFull.push(1);
         });
@@ -81,7 +82,7 @@ public class BaseTest {
         });
     }
     @Test
-    public void Should_ReturnNextElement_When_ThereIsNoNextElement() {
+    public void Should_ReturnNextElement_When_ThereIsNextElement() {
         for (int i = 1; i < ringBufferFull.size(); i++) {
             Assertions.assertEquals(i, (int) ringBufferIteratorFull.next());
         }

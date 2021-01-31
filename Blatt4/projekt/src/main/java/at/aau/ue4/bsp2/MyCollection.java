@@ -30,30 +30,29 @@ public class MyCollection {
      * IllegalArgumentException. If the list is empty it throws an IllegalArgumentException
      * @param s String to remove
      */
-    public void remove(String s) throws IllegalArgumentException{
-        if(cursor == 0){
-            throw new IllegalArgumentException();
+    public void remove(String s) throws IllegalArgumentException {
+        if (cursor == 0) {
+            throw new IllegalArgumentException("Collection underflow");
         }
-        for(int i = 0; i < cursor; i++){
-            if(!list[i].equals(s)){
-                if(i + 1 == cursor){
-                    throw new IllegalArgumentException();
-                }
-                continue;
+        int count = 0;
+        for (int i = 0; i < cursor; i++) {
+            if (list[i].equals(s)) {
+                String temp = list[i];
+                list[i] = list[cursor];
+                list[cursor--] = temp;
+                count = -1;
+            }else if(count != -1){
+                count++;
             }
-            list[i] = list[cursor];
-            list[cursor--] = null;
-            break;
+        }
+        if (count != 0 && count != -1) {
+            throw new IllegalArgumentException("String is not in Collection");
         }
     }
-
     /**
      * Removes all items from the list and initializes a new list
      */
     public void empty() {
-        for(int i = 0; i < cursor;i++){
-            list[i] = null;
-        }
         list = new String[list.length];
         cursor = 0;
     }

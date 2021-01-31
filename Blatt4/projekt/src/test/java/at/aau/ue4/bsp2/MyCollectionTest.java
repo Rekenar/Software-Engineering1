@@ -25,32 +25,31 @@ public class MyCollectionTest
     }
 
     @Test
-    public void testRemove(){
-        assertEquals(3,c.size());
-        for(int i = 3; i > 0; i--){
-            c.remove(String.valueOf(i));
-            assertEquals(i-1,c.size());
-        }
+    public void Should_ReturnIllegalArgumentException_WhenCollectionIsEmpty(){
+        c.remove("3");
+        c.remove("2");
+        c.remove("1");
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            c.remove("1");
+        });
     }
+
     @Test
-    public void testRemoveEmpty(){
-        for(int i = 3; i > 0; i--){
-            System.out.println(i);
-            c.remove(String.valueOf(i));
-            assertEquals(i - 1,c.size());
-        }
+    public void Should_ReturnIllegalArgumentException_WhenStringIsNotInCollection(){
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
             c.remove("5");
         });
     }
+
     @Test
-    public void testRemoveNotInList(){
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            c.remove("+");
-        });
+    public void Should_RemoveString_WhenStringIsInCollection(){
+        assertEquals(3,c.size());
+        c.remove("2");
+        Assertions.assertEquals(2,c.size());
     }
+
     @Test
-    public void testEmpty(){
+    public void Should_ReturnEmptyList_WhenMethodEmptyIsCalled(){
         assertEquals(3,c.size());
         c.empty();
         assertEquals(0,c.size());

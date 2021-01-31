@@ -37,6 +37,9 @@
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
+                        <configuration>
+                            <destFile>${jacoco.report.ut}</destFile>
+                        </configuration>
                     </execution>
 
                     <execution>
