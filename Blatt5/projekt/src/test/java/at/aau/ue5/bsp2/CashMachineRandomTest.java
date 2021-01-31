@@ -55,7 +55,7 @@ public class CashMachineRandomTest {
         Assertions.assertEquals(CashMachineState.CARD_TAKEN,cashMachine.getCurrentState());
     }
 
-    //Aufruf-Sequenz: Start - Card_Valid - Pin_Not_OK - Pin_OK - Amount_Not_Valid - Amount_Not_Valid - Amount_Valid - Cash-Given - Card - Taken
+    //Aufruf-Sequenz: Start - Card_Valid - Amount_Not_Valid - Amount_Not_Valid - Amount_Valid - Cash-Given - Card - Taken
     @ParameterizedTest
     @CsvSource({ "10321, 1234, 50, 21","54651,1234, 60, 22" })
     public void Should_ChangeStateToCardTaken_AfterTwoTimesAmountNotOk(String stringInput1,String stringInput2, int intInput1, int intInput2){
