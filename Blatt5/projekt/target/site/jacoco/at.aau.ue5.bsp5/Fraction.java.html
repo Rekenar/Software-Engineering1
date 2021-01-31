@@ -15,38 +15,38 @@ public class Fraction {
     }
 
     public void setNumerator(Integer numerator) {
-<span class="nc" id="L18">        this.numerator = numerator;</span>
-<span class="nc" id="L19">    }</span>
+<span class="fc" id="L18">        this.numerator = numerator;</span>
+<span class="fc" id="L19">    }</span>
 
     public Integer getDenumerator() {
 <span class="fc" id="L22">        return denumerator;</span>
     }
 
     public void setDenumerator(Integer denumerator) {
-<span class="nc" id="L26">        this.denumerator = denumerator;</span>
-<span class="nc" id="L27">    }</span>
+<span class="fc" id="L26">        this.denumerator = denumerator;</span>
+<span class="fc" id="L27">    }</span>
 
     @Override
     public boolean equals(Object o) {
-<span class="nc bnc" id="L31" title="All 2 branches missed.">        if (this == o) return true;</span>
-<span class="nc bnc" id="L32" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if (this == o) return true;</span>
+<span class="fc bfc" id="L32" title="All 4 branches covered.">        if (o == null || getClass() != o.getClass()) return false;</span>
 
-<span class="nc" id="L34">        Fraction fraction = (Fraction) o;</span>
+<span class="fc" id="L34">        Fraction fraction = (Fraction) o;</span>
 
-<span class="nc bnc" id="L36" title="All 6 branches missed.">        if (numerator != null ? !numerator.equals(fraction.numerator) : fraction.numerator != null) return false;</span>
-<span class="nc bnc" id="L37" title="All 4 branches missed.">        return denumerator != null ? denumerator.equals(fraction.denumerator) : fraction.denumerator == null;</span>
+<span class="pc bpc" id="L36" title="1 of 6 branches missed.">        if (numerator != null ? !numerator.equals(fraction.numerator) : fraction.numerator != null) return false;</span>
+<span class="pc bpc" id="L37" title="3 of 4 branches missed.">        return denumerator != null ? denumerator.equals(fraction.denumerator) : fraction.denumerator == null;</span>
     }
 
     @Override
     public int hashCode() {
-<span class="nc bnc" id="L42" title="All 2 branches missed.">        int result = numerator != null ? numerator.hashCode() : 0;</span>
-<span class="nc bnc" id="L43" title="All 2 branches missed.">        result = 31 * result + (denumerator != null ? denumerator.hashCode() : 0);</span>
-<span class="nc" id="L44">        return result;</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        int result = numerator != null ? numerator.hashCode() : 0;</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        result = 31 * result + (denumerator != null ? denumerator.hashCode() : 0);</span>
+<span class="fc" id="L44">        return result;</span>
     }
 
     @Override
     public String toString() {
-<span class="nc" id="L49">        return &quot;Fraction{&quot; +</span>
+<span class="fc" id="L49">        return &quot;Fraction{&quot; +</span>
                 &quot;numerator=&quot; + numerator +
                 &quot;, denumerator=&quot; + denumerator +
                 '}';

@@ -1,16 +1,31 @@
 package at.aau.ue5.bsp4;
-
+/**
+ * Long-Method, Duplicate Code
+ */
 public class SmellyClass {
 
     public void erstelleRechnung(Order order) {
 
         //calculate temporary price
-        Double totalPrice=0.0d;
+        Double totalPrice= getPrice(order);
+
+        //check for shipping costs
+        getShippingCosts(totalPrice,order);
+
+        //get Price with shipping costs
+        totalPrice = getPrice(order);
+
+        //Print Invoice
+        rechnungAusgabe(totalPrice,order);
+    }
+    public double getPrice(Order order){
+        double totalPrice=0.0d;
         for (Item item : order.getItems()) {
             totalPrice+=item.getPrice();
         }
-
-        //check for shipping costs
+        return totalPrice;
+    }
+    public void getShippingCosts(double totalPrice, Order order){
         if(totalPrice<=100) {
             Item item = new Item();
             item.setId(99l);
@@ -22,19 +37,14 @@ public class SmellyClass {
             } else {
                 item.setPrice(10d);
             }
-
             order.getItems().add(item);
         }
-
-        totalPrice=0.0d;
-        for (Item item : order.getItems()) {
-            totalPrice+=item.getPrice();
-        }
-
+    }
+    public void rechnungAusgabe(double totalPrice, Order order ){
         System.out.println("Rechnung:");
         for (Item item : order.getItems()) {
             System.out.println(item.getName()+": "+item.getPrice());
         }
-        System.out.println("Total: "+totalPrice);
+        System.out.println("Total: "+ totalPrice);
     }
 }
