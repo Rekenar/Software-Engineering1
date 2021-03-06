@@ -1,9 +1,15 @@
 package at.aau.ue5.bsp3;
 
-public class Entwickler extends PersonFactory {
+public class Entwickler extends Person {
     private String bevorzugteProgrammierSprache;
     private Ide ide;
     private boolean datenbanken;
+
+    public Entwickler(String bevorzugteProgrammierSprache, Ide ide, boolean datenbanken) {
+        this.bevorzugteProgrammierSprache = bevorzugteProgrammierSprache;
+        this.ide = ide;
+        this.datenbanken = datenbanken;
+    }
 
     @Override
     public String getJobBeschreibung() {
@@ -26,7 +32,7 @@ public class Entwickler extends PersonFactory {
         this.ide = ide;
     }
 
-    public boolean isDatenbanken() {
+    public boolean getDatenbanken() {
         return datenbanken;
     }
 

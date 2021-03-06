@@ -1,9 +1,12 @@
 package at.aau.ue5.bsp3;
 
-public class Architekt extends PersonFactory{
+public class Architekt extends Person {
 
     private Feld feld;
 
+    public Architekt(Feld feld){
+        this.feld = feld;
+    }
     @Override
     public String getJobBeschreibung() {
         return "Designed die Architektur des Projekts.";
